@@ -1,0 +1,178 @@
+D:\programming\c\sc>masuka -b release -e gpu_tiny_llm
+Source\Sc\TinyLlm.c:1527:20: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 1527 |     FILE* pProbe = fopen(pPath, "r");
+      |                    ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\TinyLlm.c:1533:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 1533 |     FILE* pFile = fopen(pPath, "a");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\TinyLlm.c:1865:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 1865 |     FILE* pFile = fopen(pPath, "wb");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\TinyLlm.c:1922:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 1922 |     FILE* pFile = fopen(pPath, "rb");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+4 warnings generated.
+Source\Sc\TinyLlmSimd.c:297:22: error: unknown type name '__m256'
+  297 | _sc_tiny_llm_hsum256(__m256 v)
+      |                      ^
+Source\Sc\TinyLlmSimd.c:299:17: error: call to undeclared function '_mm256_castps256_ps128'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  299 |     __m128 lo = _mm256_castps256_ps128(v);
+      |                 ^
+Source\Sc\TinyLlmSimd.c:300:17: error: call to undeclared function '_mm256_extractf128_ps'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  300 |     __m128 hi = _mm256_extractf128_ps(v, 1);
+      |                 ^
+Source\Sc\TinyLlmSimd.c:302:11: error: call to undeclared function '_mm_hadd_ps'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  302 |     sum = _mm_hadd_ps(sum, sum);
+      |           ^
+Source\Sc\TinyLlmSimd.c:302:11: note: did you mean '_mm_add_ps'?
+C:\Program Files\LLVM\lib\clang\18\include\xmmintrin.h:78:1: note: '_mm_add_ps' declared here
+   78 | _mm_add_ps(__m128 __a, __m128 __b)
+      | ^
+Source\Sc\TinyLlmSimd.c:302:9: error: assigning to '__m128' (vector of 4 'float' values) from incompatible type 'int'
+  302 |     sum = _mm_hadd_ps(sum, sum);
+      |         ^ ~~~~~~~~~~~~~~~~~~~~~
+Source\Sc\TinyLlmSimd.c:303:9: error: assigning to '__m128' (vector of 4 'float' values) from incompatible type 'int'
+  303 |     sum = _mm_hadd_ps(sum, sum);
+      |         ^ ~~~~~~~~~~~~~~~~~~~~~
+Source\Sc\TinyLlmSimd.c:318:9: error: use of undeclared identifier '__m256'
+  318 |         __m256 vsum = _mm256_setzero_ps();
+      |         ^
+Source\Sc\TinyLlmSimd.c:320:13: error: use of undeclared identifier 'vsum'
+  320 |             vsum = _mm256_add_ps(vsum, _mm256_loadu_ps(x + d));
+      |             ^
+Source\Sc\TinyLlmSimd.c:320:20: error: call to undeclared function '_mm256_add_ps'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  320 |             vsum = _mm256_add_ps(vsum, _mm256_loadu_ps(x + d));
+      |                    ^
+Source\Sc\TinyLlmSimd.c:320:20: note: did you mean '_mm_add_ps'?
+C:\Program Files\LLVM\lib\clang\18\include\xmmintrin.h:78:1: note: '_mm_add_ps' declared here
+   78 | _mm_add_ps(__m128 __a, __m128 __b)
+      | ^
+Source\Sc\TinyLlmSimd.c:320:40: error: call to undeclared function '_mm256_loadu_ps'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  320 |             vsum = _mm256_add_ps(vsum, _mm256_loadu_ps(x + d));
+      |                                        ^
+Source\Sc\TinyLlmSimd.c:320:34: error: use of undeclared identifier 'vsum'
+  320 |             vsum = _mm256_add_ps(vsum, _mm256_loadu_ps(x + d));
+      |                                  ^
+Source\Sc\TinyLlmSimd.c:322:40: error: use of undeclared identifier 'vsum'
+  322 |         f32 sum = _sc_tiny_llm_hsum256(vsum);
+      |                                        ^
+Source\Sc\TinyLlmSimd.c:327:9: error: use of undeclared identifier '__m256'
+  327 |         __m256 vmean = _mm256_set1_ps(mean);
+      |         ^
+Source\Sc\TinyLlmSimd.c:330:9: error: use of undeclared identifier '__m256'
+  330 |         __m256 vvar = _mm256_setzero_ps();
+      |         ^
+Source\Sc\TinyLlmSimd.c:333:13: error: use of undeclared identifier '__m256'
+  333 |             __m256 diff = _mm256_sub_ps(_mm256_loadu_ps(x + d), vmean);
+      |             ^
+Source\Sc\TinyLlmSimd.c:334:13: error: use of undeclared identifier 'vvar'
+  334 |             vvar = _mm256_fmadd_ps(diff, diff, vvar);
+      |             ^
+Source\Sc\TinyLlmSimd.c:334:20: error: call to undeclared function '_mm256_fmadd_ps'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  334 |             vvar = _mm256_fmadd_ps(diff, diff, vvar);
+      |                    ^
+Source\Sc\TinyLlmSimd.c:334:36: error: use of undeclared identifier 'diff'
+  334 |             vvar = _mm256_fmadd_ps(diff, diff, vvar);
+      |                                    ^
+Source\Sc\TinyLlmSimd.c:334:42: error: use of undeclared identifier 'diff'
+  334 |             vvar = _mm256_fmadd_ps(diff, diff, vvar);
+      |                                          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+Source\Sc\Sc.c:2869:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 2869 |     FILE* pFile = fopen(pFilePath, "rb");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\Sc.c:2902:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 2902 |     FILE* pFile = fopen(pFilePath, "wb");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\Sc.c:2916:19: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 2916 |     FILE* pFile = fopen(pFilePath, "a+b");
+      |                   ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+Source\Sc\Sc.c:5201:22: warning: 'localtime' is deprecated: This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+ 5201 |     struct tm* ptr = localtime(&rawtime);
+      |                      ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt\time.h:524:9: note: 'localtime' has been explicitly marked deprecated here
+  524 |         _CRT_INSECURE_DEPRECATE(localtime_s)
+      |         ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:358:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  358 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files\Microsoft Visual Studio\18\Insiders\VC\Tools\MSVC\14.52.37025\include\vcruntime.h:348:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  348 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+4 warnings generated.
+Source\Sc\Gfx\Ui.c:75:2: warning: "Configure for release build!" [-W#warnings]
+   75 | #warning "Configure for release build!"
+      |  ^
+1 warning generated.
+llvm-ar.exe: error: bin\obj\release-windows\Sc\TinyLlmSimd.o: no such file or directory
+[ ERRO ] 15:53:30 Source\Masuka.c msk_compiler_run_script_ext:4775 Command failed (status 1): cmd /c "D:\programming\c\sc\bin/.masuka-tmp/vince_build.bat" > "D:\programming\c\sc\bin/.masuka-tmp\build.log" 2>&1
+
+Build failed: 9 warning(s), 21 error(s)
+[ ERRO ] 15:53:30 Source\Masuka.c msk_cli_start:835 Build failed!
+Build time: 4920 ms
+[ ERRO ] 15:53:30 Source\Masuka.c msk_runner_run_program:5774 Program 'bin\release-windows\gpu_tiny_llm.exe' doesn't exist. Build it first (masuka or masuka -rb).
+[ ERRO ] 15:53:30 Source\Masuka.c msk_cli_start:874 Run failed!
